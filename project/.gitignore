@@ -1,0 +1,4 @@
+# Ignore uploaded/generated images
+static/uploads/*.jpg
+static/uploads/*.jpeg
+static/uploads/*.png

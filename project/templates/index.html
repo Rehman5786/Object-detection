@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Object Detection System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<div class="container">
+    <h1>Classical Object Detection</h1>
+    <p>SIFT · ORB · HOG · Selective Search · DPM</p>
+
+    <form action="/upload" method="post" enctype="multipart/form-data">
+        <div class="upload-box">
+            <input type="file" id="image" name="image" accept="image/*" required>
+            <label for="image">Choose Image</label>
+        </div>
+
+        <button type="submit">Upload & Process</button>
+    </form>
+
+    {% if output %}
+    <div class="result">
+        <h3>Detection Output</h3>
+        <img src="{{ url_for('static', filename='uploads/output.jpg') }}" alt="Detection Result">
+    </div>
+    {% endif %}
+
+    <div class="footer">
+        Computer Vision Project | Flask & OpenCV
+    </div>
+</div>
+
+</body>
+</html>
